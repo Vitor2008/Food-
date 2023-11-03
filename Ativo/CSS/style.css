@@ -1103,16 +1103,17 @@ img{
 }
 
 .footer .end a{
-    color: aqua;
+    color: #0ef;
     font-family: var(--second-font);
     font-size:  var(--large-font-size);
+    font-weight: bold;
 }
 
 
 .end a:hover{
     transform: scale(1.2);
     transition: .3s;
-    color: rgb(39, 8, 239);
+    color: #0ef;
 }
 
 
