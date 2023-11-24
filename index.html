@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-sacale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="Ativo/CSS/style.css" />
+    <link rel="stylesheet" href="Ativo/CSS/animate.css" />
+    <link rel="stylesheet" href="Ativo/CSS/bootstrap.min.css" />
     <link rel="shortcut icon" href="Ativo/Imagens/favicon.ico" type="image/x-icon">
     <title>Foodio Restaurante</title>
 </head>
+
 <body>
+
+    <div class="container-mensagens" id="container-mensagens"></div>
+
+    <a class="botao-carrinho hidden" onclick="cardapio.metodos.abrirCarrinho(true)">
+        <div class="badge-total-carrinho">0</div>
+        <i class="fa fa-shopping-bag"></i>
+    </a>
+
     <!--==================== HEADER ====================-->
-    <header class="header" id="header">
+    <header class="header col-one animated fadeIn" id="header">
         <nav class="nav container">
             <a href="index.html" class="nav_logo">
                 <img src="Ativo/Imagens/logo.png" alt="" class="nav_logo-img">
@@ -19,11 +31,7 @@
 
             <div class="nav_menu" id="nav-menu">
                 <a href="index.html" class="logo_mobile">
-                    <img 
-                       src="Ativo/Imagens/logo-dark.png"
-                       alt=""
-                       class="logo_mobile-img" 
-                    />
+                    <img src="Ativo/Imagens/logo-dark.png" alt="" class="logo_mobile-img" />
                 </a>
 
                 <ul class="nav_list">
@@ -58,7 +66,13 @@
                     <i class="ri-menu-line"></i>
                 </div>
 
-                <a href="#reservation" class="button reservation_btn">Reserve uma Mesa</a>
+                <a class="button reservation_btn btn-icon" onclick="cardapio.metodos.abrirCarrinho(true)">
+                    
+                    Meu carrinho &nbsp;<span class="icon">
+                        <div class="container-total-carrinho badge-total-carrinho hidden">0</div>
+                        <i class="fa fa-shopping-bag"></i>
+                    </span>
+                </a>
             </div>
         </nav>
     </header>
@@ -66,29 +80,31 @@
     <!--==================== MAIN ====================-->
     <main class="main">
 
-    <!--==================== HOME ====================-->
-        <section class="home" id="home">
+        <!--==================== HOME ====================-->
+        <section class="home col-one" id="home">
             <div class="swiper home-swiper container">
                 <div class="swiper-wrapper">
                     <!--HOME SWIPER 1-->
                     <div class="swiper-slide home_content grid">
                         <div class="home__data">
-                            <h3 class="home__subtitle">Entrega mais rápida e retirada fácil</h3>
-                            <h1 class="home__title">Kings Burguer</h1>
-                            <p class="home__description">Boa comida começa com bons ingredientes. Nós só trazemos o melhor para você.</p>
+                            <h3 class="home__subtitle wow fadeInLeft">Entrega mais rápida e retirada fácil</h3>
+                            <h1 class="home__title wow fadeInLeft">Kings Burguer</h1>
+                            <p class="home__description wow fadeInLeft">Boa comida começa com bons ingredientes. Nós só
+                                trazemos o melhor para você.</p>
 
-                            <a href="#menu" class="button">Veja nosso cardápio</a>
+                            <a href="#menu" class="button wow fadeInUp">Veja nosso cardápio</a>
                         </div>
 
-                        <img src="Ativo/Imagens/slide-1.png" alt="" class="home__img">
+                        <img src="Ativo/Imagens/slide-1.png" alt="" class="home__img wow fadeInRight delay-08s">
                     </div>
 
-                     <!--HOME SWIPER 2-->
-                     <div class="swiper-slide home_content grid">
+                    <!--HOME SWIPER 2-->
+                    <div class="swiper-slide home_content grid">
                         <div class="home__data">
                             <h3 class="home__subtitle">Entrega mais rápida e retirada fácil</h3>
                             <h1 class="home__title">Espeto Gourmet</h1>
-                            <p class="home__description">Boa comida começa com bons ingredientes. Nós só trazemos o melhor para você.</p>
+                            <p class="home__description">Boa comida começa com bons ingredientes. Nós só trazemos o
+                                melhor para você.</p>
 
                             <a href="#menu" class="button">Veja nosso cardápio</a>
                         </div>
@@ -96,12 +112,13 @@
                         <img src="Ativo/Imagens/slide-2.png" alt="" class="home__img">
                     </div>
 
-                     <!--HOME SWIPER 3-->
-                     <div class="swiper-slide home_content grid">
+                    <!--HOME SWIPER 3-->
+                    <div class="swiper-slide home_content grid">
                         <div class="home__data">
                             <h3 class="home__subtitle">Entrega mais rápida e retirada fácil</h3>
                             <h1 class="home__title">Petiscos Saborosos</h1>
-                            <p class="home__description">Boa comida começa com bons ingredientes. Nós só trazemos o melhor para você.</p>
+                            <p class="home__description">Boa comida começa com bons ingredientes. Nós só trazemos o
+                                melhor para você.</p>
 
                             <a href="#menu" class="button">Veja nosso cardápio</a>
                         </div>
@@ -109,12 +126,13 @@
                         <img src="Ativo/Imagens/slide-3.png" alt="" class="home__img">
                     </div>
 
-                     <!--HOME SWIPER 4-->
-                     <div class="swiper-slide home_content grid">
+                    <!--HOME SWIPER 4-->
+                    <div class="swiper-slide home_content grid">
                         <div class="home__data">
                             <h3 class="home__subtitle">Entrega mais rápida e retirada fácil</h3>
                             <h1 class="home__title">Pizza de alho</h1>
-                            <p class="home__description">Boa comida começa com bons ingredientes. Nós só trazemos o melhor para você.</p>
+                            <p class="home__description">Boa comida começa com bons ingredientes. Nós só trazemos o
+                                melhor para você.</p>
 
                             <a href="#menu" class="button">Veja nosso cardápio</a>
                         </div>
@@ -134,22 +152,26 @@
             </div>
         </section>
 
-     <!--==================== ABOUT ====================-->
-        <section class="about container section" id="about">
+        <!--==================== ABOUT ====================-->
+        <section class="about container section col-one" id="about">
             <div class="section_container grid">
-                <div class="section_group">
+                <div class="section_group wow fadeIn">
                     <span class="section_subtitle">SOBRE NÓS</span>
                     <h2 class="section_title">Novos pratos para serem apreciados</h2>
                 </div>
 
                 <div class="section_group">
-                    <p class="section_description">Nossa paixão é criar experiências culinárias inesquecíveis. Somos um oásis para os amantes da boa comida. Com uma equipe apaixonada e talentosa de chefs, servimos pratos cuidadosamente elaborados, combinando ingredientes frescos e sabores autênticos.</p>
+                    <p class="section_description wow fadeIn">Nossa paixão é criar experiências culinárias
+                        inesquecíveis. Somos um oásis para os amantes da boa comida. Com uma equipe apaixonada e
+                        talentosa de chefs, servimos pratos cuidadosamente elaborados, combinando ingredientes frescos e
+                        sabores autênticos.</p>
 
 
-                    <div class="section_data">
+                    <div class="section_data wow fadeInRight delay-08s">
                         <img src="Ativo/Imagens/girl.jpg" alt="" class="section_img" />
 
-                        <div><h3 class="section_data-title">Willimes James</h3>
+                        <div>
+                            <h3 class="section_data-title">Willimes James</h3>
                             <p class="section_data-description">
                                 Diretor e Chefe de Cozinha
                             </p>
@@ -158,7 +180,7 @@
                 </div>
             </div>
 
-            <div class="about_container grid">
+            <div class="about_container grid wow fadeIn">
                 <div class="about_item">
                     <img src="Ativo/Imagens/restaurant-1.jpg" alt="" class="about_img" />
 
@@ -170,7 +192,8 @@
                     <div class="about_hover">
                         <div class="about_hover-data">
                             <h3 class="about_hover-title">Restaurante</h3>
-                            <p class="about_description">Descubra uma explosão de sabores - O destino perfeito para uma experiência gastronômica memorável!</p>
+                            <p class="about_description">Descubra uma explosão de sabores - O destino perfeito para uma
+                                experiência gastronômica memorável!</p>
                             <a href="#reservation" class="button about_btn">Reserve uma Mesa</a>
                         </div>
                     </div>
@@ -204,7 +227,8 @@
                     <div class="about_hover">
                         <div class="about_hover-data">
                             <h3 class="about_hover-title">Jantar Privado</h3>
-                            <p class="about_description">Viva momentos exclusivos e inesquecíveis em um jantar privado - Celebre com estilo e saboreie cada instante desse momento especial!</p>
+                            <p class="about_description">Viva momentos exclusivos e inesquecíveis em um jantar privado -
+                                Celebre com estilo e saboreie cada instante desse momento especial!</p>
                             <a href="#reservation" class="button about_btn">Reserve uma Mesa</a>
                         </div>
                     </div>
@@ -212,216 +236,83 @@
             </div>
         </section>
 
-    <!--==================== MENU ====================-->
-        <section class="menu menu-one section" id="menu">
-            <h2 class="section_title title-center">Cardápios</h2>
+        <!--==================== MENU ====================-->
+        <section class="menu menu-one section col-one" id="menu">
+            <h2 class="section_title title-center wow fadeIn">Cardápio</h2>
 
-            <div class="menu_container container grid">
-                <div class="menu_group grid">
-                    <div class="menu_item">
-                        <div class="menu_img-wrapper">
-                            <img src="Ativo/Imagens/food-img-1.png" alt="" class="menu_img" />
-                        </div>
+            
 
-                        <div class="menu_data">
-                            <h3 class="menu_title">Hambúrguer de Bacon</h3>
-                            <span class="menu_price">R$ 24,00</span>
-                            <ul class="menu_rating">
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                            </ul>
+            
 
-                            <a href="#" class="menu_btn">
-                                <i class="ri-shopping-bag-line"></i>
-                            </a>
-                        </div>
-                    </div>
+            <div class="container">
+                <div class="col-12 container-menu">
+                    <a id="menu-burgers" class="btn btn-menu btn-sm mr-3 active-menu wow fadeInUp" onclick="cardapio.metodos.obterItensCardapio('burgers')">
+                        <i class="fas fa-hamburger"></i>&nbsp; Burger
+                    </a>
 
-                    <div class="menu_item">
-                        <div class="menu_img-wrapper">
-                            <img src="Ativo/Imagens/food-img-2.png" alt="" class="menu_img" />
-                        </div>
+                    <a id="menu-pizzas" class="btn btn-menu btn-sm mr-3 wow fadeInUp" onclick="cardapio.metodos.obterItensCardapio('pizzas')">
+                        <i class="fas fa-pizza-slice"></i>&nbsp; Pizzas
+                    </a>
 
-                        <div class="menu_data">
-                            <h3 class="menu_title">Hambúrguer Duplo</h3>
-                            <span class="menu_price">R$ 22,00</span>
-                            <ul class="menu_rating">
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                            </ul>
+                    <a id="menu-bebidas" class="btn btn-menu btn-sm mr-3 wow fadeInUp" onclick="cardapio.metodos.obterItensCardapio('bebidas')">
+                        <i class="fas fa-cocktail"></i>&nbsp; Bebidas
+                    </a>
 
-                            <a href="#" class="menu_btn">
-                                <i class="ri-shopping-bag-line"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="menu_item">
-                        <div class="menu_img-wrapper">
-                            <img src="Ativo/Imagens/food-img-3.png" alt="" class="menu_img" />
-                        </div>
-
-                        <div class="menu_data">
-                            <h3 class="menu_title">Hambúrguer Pimenta Preta</h3>
-                            <span class="menu_price">R$ 22,00</span>
-                            <ul class="menu_rating">
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                            </ul>
-
-                            <a href="#" class="menu_btn">
-                                <i class="ri-shopping-bag-line"></i>
-                            </a>
-                        </div>
-                    </div>
+                    <a id="menu-sobremesas" class="btn btn-menu btn-sm mr-3 wow fadeInUp" onclick="cardapio.metodos.obterItensCardapio('sobremesas')">
+                        <i class="fas fa-ice-cream"></i>&nbsp; Sobremesas
+                    </a>
                 </div>
 
-                <div class="menu_group grid">
-                    <div class="menu_item">
-                        <div class="menu_img-wrapper">
-                            <img src="Ativo/Imagens/food-img-4.png" alt="" class="menu_img" />
-                        </div>
 
-                        <div class="menu_data">
-                            <h3 class="menu_title">Pizza Quatro Queijos</h3>
-                            <span class="menu_price">R$ 24,00</span>
-                            <ul class="menu_rating">
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                            </ul>
-
-                            <a href="#" class="menu_btn">
-                                <i class="ri-shopping-bag-line"></i>
-                            </a>
-                        </div>
-                    </div>
-
+                <div class="col-6 wow fadeInRight delay-03s">
                     <div class="opening">
                         <h3 class="opening_title">HORÁRIO DE FUNCIONAMENTO</h3>
 
                         <dl class="opening_list">
-                            <dt>Terça-Feira</dt>
+                            <dt>Terça a Quinta</dt>
                             <dd>17:00 às 23:00</dd>
-                            <dt>Quarta-Feira</dt>
-                            <dd>17:00 às 23:00</dd>
-                            <dt>Quinta-Feira</dt>
-                            <dd>17:00 às 23:00</dd>
-                            <dt>Sexta-Feira</dt>
-                            <dd>16:00 às 00:00</dd>
-                            <dt>Sábado</dt>
-                            <dd>16:00 às 00:00</dd>
-                            <dt>Domingo</dt>
+                            <dt>Sexta a Domingo</dt>
                             <dd>16:00 às 00:00</dd>
                             <dt class="close">Segunda-Feira</dt>
                             <dd class="close">Fechado</dd>
                         </dl>
-
-                        <div class="opening_data">
-                            <a href="callto: +1234567891"><h3>65 3612-5001</h3></a>
-                            <h4 class="opening_description">
-                                Av. Do CPA 878, Cuiabá - MT
-                            </h4>
-                        </div>
                     </div>
                 </div>
 
-                <div class="menu_group grid">
-                    <div class="menu_item">
-                        <div class="menu_img-wrapper">
-                            <img src="Ativo/Imagens/food-img-5.png" alt="" class="menu_img" />
-                        </div>
+                <div class="col-12 container-menu wow fadeInUp">
+                    <div class="row" id="itensCardapio">
+    
+                        
 
-                        <div class="menu_data">
-                            <h3 class="menu_title">Hambúrguer de Frango Crocante</h3>
-                            <span class="menu_price">R$ 18,00</span>
-                            <ul class="menu_rating">
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                            </ul>
-
-                            <a href="#" class="menu_btn">
-                                <i class="ri-shopping-bag-line"></i>
-                            </a>
-                        </div>
                     </div>
 
-                    <div class="menu_item">
-                        <div class="menu_img-wrapper">
-                            <img src="Ativo/Imagens/food-img-6.png" alt="" class="menu_img" />
-                        </div>
 
-                        <div class="menu_data">
-                            <h3 class="menu_title">Pizza de Frango para Churrasco</h3>
-                            <span class="menu_price">R$ 21,00</span>
-                            <ul class="menu_rating">
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                            </ul>
-
-                            <a href="#" class="menu_btn">
-                                <i class="ri-shopping-bag-line"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="menu_item">
-                        <div class="menu_img-wrapper">
-                            <img src="Ativo/Imagens/food-img-7.png" alt="" class="menu_img" />
-                        </div>
-
-                        <div class="menu_data">
-                            <h3 class="menu_title">Pizza Clássica de Pepperoni</h3>
-                            <span class="menu_price">R$ 19,00</span>
-                            <ul class="menu_rating">
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                                <li><i class="ri-star-fill"></i></li>
-                            </ul>
-
-                            <a href="#" class="menu_btn">
-                                <i class="ri-shopping-bag-line"></i>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
+
+            
+
+
         </section>
 
-    <!--==================== SERVICES ====================-->
-        <section class="services container section" id="services">
+        <!--==================== SERVICES ====================-->
+        <section class="services container section col-one" id="services">
             <div class="section_container grid">
-                <div class="section_group">
+                <div class="section_group wow fadeInLeft">
                     <span class="section_subtitle">MELHORES SOLUÇÕES</span>
                     <h2 class="section_title">Prestamos os melhores serviços!</h2>
                 </div>
 
-                <div class="section_group">
-                    <p class="section_description">Ingredientes de qualidade, preparo meticuloso e um toque de criatividade em cada prato que servimos. Oferecemos uma variedade de opções, desde deliciosos pratos tradicionais até criações contemporâneas que agradarão até mesmo os paladares mais exigentes.</p>
+                <div class="section_group wow fadeInRight">
+                    <p class="section_description">Ingredientes de qualidade, preparo meticuloso e um toque de
+                        criatividade em cada prato que servimos. Oferecemos uma variedade de opções, desde deliciosos
+                        pratos tradicionais até criações contemporâneas que agradarão até mesmo os paladares mais
+                        exigentes.</p>
 
                 </div>
             </div>
 
-            <div class="services_container grid">
+            <div class="services_container grid wow fadeInUp">
                 <div class="services_item">
                     <div class="services_img-wrapper">
                         <img src="Ativo/Imagens/service-1.svg" alt="" class="services_img">
@@ -455,17 +346,18 @@
                     </div>
 
                     <h3 class="services_title">Refeições ao ar livre</h3>
-                    <p class="services_description">Desfrute de uma deliciosa refeição em um ambiente aberto e ao ar livre.</p>
+                    <p class="services_description">Desfrute de uma deliciosa refeição em um ambiente aberto e ao ar
+                        livre.</p>
                 </div>
             </div>
         </section>
 
-    <!--==================== DEALS ====================-->
-        <section class="deals section container">
-            <span class="section_subtitle">ESPECIAL SEMANAL</span>
-            <h2 class="section_title">Ofertas mais vendidas!</h2>
+        <!--==================== DEALS ====================-->
+        <section class="deals section container col-one">
+            <span class="section_subtitle wow fadeIn">ESPECIAL SEMANAL</span>
+            <h2 class="section_title wow fadeIn">Ofertas mais vendidas!</h2>
 
-            <div class="deals_container grid">
+            <div class="deals_container grid wow fadeIn delay-08s">
                 <div class="tab_btns">
                     <span class="tab_btn active-tab" data-target="#vegetais">Peixes Vegetais</span>
                     <span class="tab_btn" data-target="#espetos">Espeto Gourmet</span>
@@ -476,7 +368,7 @@
                 </div>
 
                 <div class="table_items">
-                    <div class="table_item active-tab" content id="vegetais">
+                    <div class="table_item active-tab  animated fadeInUp" content id="vegetais">
                         <h3 class="deals_title">Peixe e Legumes</h3>
                         <ul class="quality_list">
                             <li class="list_item">
@@ -505,10 +397,10 @@
                             <del>R$14,85</del>
                         </div>
 
-                        <a href="#" class="button">Adicionar ao Carrinho</a>
+                        <a href="#reservation" class="button">Fazer Reserva</a>
                     </div>
 
-                    <div class="table_item" content id="espetos">
+                    <div class="table_item animated fadeInUp" content id="espetos">
                         <h3 class="deals_title">Espeto Gourmet</h3>
                         <ul class="quality_list">
                             <li class="list_item">
@@ -537,10 +429,10 @@
                             <del>R$20,85</del>
                         </div>
 
-                        <a href="#" class="button">Adicionar ao Carrinho</a>
+                        <a href="#reservation" class="button">Fazer Reserva</a>
                     </div>
 
-                    <div class="table_item" content id="vegas">
+                    <div class="table_item animated fadeInUp" content id="vegas">
                         <h3 class="deals_title">Buffet Vegas</h3>
                         <ul class="quality_list">
                             <li class="list_item">
@@ -569,10 +461,10 @@
                             <del>R$26,85</del>
                         </div>
 
-                        <a href="#" class="button">Adicionar ao Carrinho</a>
+                        <a href="#reservation" class="button">Fazer Reserva</a>
                     </div>
 
-                    <div class="table_item" content id="peixe">
+                    <div class="table_item animated fadeInUp" content id="peixe">
                         <h3 class="deals_title">Peixe Grelhado</h3>
                         <ul class="quality_list">
                             <li class="list_item">
@@ -601,10 +493,10 @@
                             <del>R$17,85</del>
                         </div>
 
-                        <a href="#" class="button">Adicionar ao Carrinho</a>
+                        <a href="#reservation" class="button">Fazer Reserva</a>
                     </div>
 
-                    <div class="table_item" content id="petiscos">
+                    <div class="table_item animated fadeInUp" content id="petiscos">
                         <h3 class="deals_title">Petiscos Saborosos</h3>
                         <ul class="quality_list">
                             <li class="list_item">
@@ -633,10 +525,10 @@
                             <del>R$14,85</del>
                         </div>
 
-                        <a href="#" class="button">Adicionar ao Carrinho</a>
+                        <a href="#reservation" class="button">Fazer Reserva</a>
                     </div>
 
-                    <div class="table_item" content id="picanha">
+                    <div class="table_item animated fadeInUp" content id="picanha">
                         <h3 class="deals_title">Picanha na Pedra</h3>
                         <ul class="quality_list">
                             <li class="list_item">
@@ -665,118 +557,254 @@
                             <del>R$37,85</del>
                         </div>
 
-                        <a href="#" class="button">Adicionar ao Carrinho</a>
+                        <a href="#reservation" class="button">Fazer Reserva</a>
                     </div>
                 </div>
             </div>
         </section>
-        
-    <!--==================== MENU ====================-->
-    <section class="menu menu-two section">
-        <h2 class="section_title title-center">Um coquetel de cortesia, café ou chá gelado para você!</h2>
 
-        <div class="menu_container container grid">
-            <div class="menu_item">
-                <div class="menu_img-wrapper">
-                    <img src="Ativo/Imagens/coof-img-1.png" alt="" class="menu_img" />
+        <!--==================== MENU ====================-->
+        <section class="menu menu-two section">
+            <h2 class="section_title title-center col-one wow fadeIn">Um coquetel de cortesia, café ou chá gelado para você!
+            </h2>
+
+            <div class="menu_container container grid wow fadeInUp">
+                <div class="menu_item col-one">
+                    <div class="menu_img-wrapper">
+                        <img src="Ativo/Imagens/Cardapio/bebidas/coof-img-1.png" alt="" class="menu_img" />
+                    </div>
+
+                    <div class="menu_data">
+                        <span class="menu_grams">100 ml</span>
+                        <h3 class="menu_title">Coquetel Esplendor</h3>
+                        <span class="menu_price">R$ 11,00</span>
+                        <ul class="menu_rating">
+                            <li><i class="ri-star-fill"></i></li>
+                            <li><i class="ri-star-fill"></i></li>
+                            <li><i class="ri-star-fill"></i></li>
+                            <li><i class="ri-star-fill"></i></li>
+                            <li><i class="ri-star-fill"></i></li>
+                        </ul>
+
+
+                        <a href="#menu" class="button">Ver Cardápio</a>
+                    </div>
                 </div>
 
-                <div class="menu_data">
-                    <span class="menu_grams">100 ml</span>
-                    <h3 class="menu_title">Coquetel Esplendor de Framboesa</h3>
-                    <span class="menu_price">R$ 11,00</span>
-                    <ul class="menu_rating">
-                        <li><i class="ri-star-fill"></i></li>
-                        <li><i class="ri-star-fill"></i></li>
-                        <li><i class="ri-star-fill"></i></li>
-                        <li><i class="ri-star-fill"></i></li>
-                        <li><i class="ri-star-fill"></i></li>
-                    </ul>
+                <div class="menu_item col-one">
+                    <div class="menu_img-wrapper">
+                        <img src="Ativo/Imagens/Cardapio/bebidas/coof-img-2.png" alt="" class="menu_img" />
+                    </div>
 
-                    <a href="#" class="menu_btn">
-                        <i class="ri-shopping-bag-line"></i>
-                    </a>
+                    <div class="menu_data">
+                        <span class="menu_grams">100 ml</span>
+                        <h3 class="menu_title">Café Vigoroso Espresso</h3>
+                        <span class="menu_price">R$ 11,00</span>
+                        <ul class="menu_rating">
+                            <li><i class="ri-star-fill"></i></li>
+                            <li><i class="ri-star-fill"></i></li>
+                            <li><i class="ri-star-fill"></i></li>
+                            <li><i class="ri-star-fill"></i></li>
+                            <li><i class="ri-star-fill"></i></li>
+                        </ul>
+
+                        <a href="#menu" class="button">Ver Cardápio</a>
+                    </div>
+                </div>
+
+                <div class="menu_item col-one">
+                    <div class="menu_img-wrapper">
+                        <img src="Ativo/Imagens/Cardapio/bebidas/coof-img-3.png" alt="" class="menu_img" />
+                    </div>
+
+                    <div class="menu_data">
+                        <span class="menu_grams">100 ml</span>
+                        <h3 class="menu_title">Coquetel Rainbow Paradise</h3>
+                        <span class="menu_price">R$ 11,00</span>
+                        <ul class="menu_rating">
+                            <li><i class="ri-star-fill"></i></li>
+                            <li><i class="ri-star-fill"></i></li>
+                            <li><i class="ri-star-fill"></i></li>
+                            <li><i class="ri-star-fill"></i></li>
+                            <li><i class="ri-star-fill"></i></li>
+                        </ul>
+
+                        <a href="#menu" class="button">Ver Cardápio</a>
+                    </div>
+                </div>
+
+                <div class="menu_item col-one">
+                    <div class="menu_img-wrapper">
+                        <img src="Ativo/Imagens/Cardapio/bebidas/coof-img-4.png" alt="" class="menu_img" />
+                    </div>
+
+                    <div class="menu_data">
+                        <span class="menu_grams">100 ml</span>
+                        <h3 class="menu_title">Coquetel Céu Tropical Paradise</h3>
+                        <span class="menu_price">R$ 11,00</span>
+                        <ul class="menu_rating">
+                            <li><i class="ri-star-fill"></i></li>
+                            <li><i class="ri-star-fill"></i></li>
+                            <li><i class="ri-star-fill"></i></li>
+                            <li><i class="ri-star-fill"></i></li>
+                            <li><i class="ri-star-fill"></i></li>
+                        </ul>
+
+                        <a href="#menu" class="button">Ver Cardápio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== RESERVATION ====================-->
+        <section class="reservation section container col-one" id="reservation">
+            <span class="section_subtitle wow fadeInLeft">ENTRE EM CONTATO</span>
+            <h2 class="section_title wow fadeInLeft">Reserve uma mesa, e desfrute de uma Experiência Incrível!</h2>
+
+            <div class="reservation_container grid">
+                <div class="reservation_info wow fadeInLeft">
+                    <div class="reservation_card">
+                        <span class="reservation_icon-wrapper">
+                            <img src="Ativo/Imagens/mobile.svg" alt="" class="reservation_icon">
+                        </span>
+
+                        <div>
+                            <h3 class="reservation_card-title">Para Reservas</h3>
+                            <span class="reservation_card-data">65 3612-5001</span>
+                        </div>
+                    </div>
+
+                    <div class="reservation_card">
+                        <span class="reservation_icon-wrapper">
+                            <img src="Ativo/Imagens/envelope.svg" alt="" class="reservation_icon">
+                        </span>
+
+                        <div>
+                            <h3 class="reservation_card-title">Para Refeições Privadas</h3>
+                            <span class="reservation_card-data">fodioo65@gmail.com.br</span>
+                        </div>
+                    </div>
+
+                    <div class="reservation_card">
+                        <span class="reservation_icon-wrapper">
+                            <img src="Ativo/Imagens/location.svg" alt="" class="reservation_icon">
+                        </span>
+
+                        <div>
+                            <h3 class="reservation_card-title">Localização</h3>
+                            <span class="reservation_card-data">Av. Do CPA 878, Cuiabá - MT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form action="" class="reservation_form wow fadeInRight">
+                    <div class="reservation_form-div">
+                        <input id="txtNumeroConvidados" type="text" placeholder="Nº de Convidados" class="reservation_form-inuput" />
+                    </div>
+
+
+                    <div class="reservation_form-group">
+                        <div class="reservation_form-div">
+                            <input id="txtNome" type="text" placeholder="Nome Completo" class="reservation_form-inuput" />
+                        </div>
+
+                        <div class="reservation_form-div">
+                            <input id="txTelefone" type="text" placeholder="Telefone" class="reservation_form-inuput" />
+                        </div>
+                    </div>
+
+                    <div class="reservation_form-group">
+                        <div class="reservation_form-div">
+                            <input id="txtData" type="text" placeholder="dia/mês/ano" class="reservation_form-inuput" />
+                        </div>
+
+                        <div class="reservation_form-div">
+                            <input id="txtHorario" type="text" placeholder="00:00" class="reservation_form-inuput" />
+                        </div>
+                    </div>
+
+                    <a class="button reservation_button" id="btnReserva" onclick="cardapio.metodos.carregarBotaoReserva()" target="_blank">Enviar Mensagem</a>
+                </form>
+            </div>
+        </section>
+
+        <!--==================== GALLERY ====================-->
+        <section class="gallery wow fadeIn col-one">
+            <div class="gallery_container grid">
+                <div class="gallery_item">
+                    <img src="Ativo/Imagens/photo-gallery-1.jpg" alt="" class="gallery_img" />
+
+                    <div class="gallery_hover"></div>
+                </div>
+
+                <div class="gallery_item">
+                    <img src="Ativo/Imagens/photo-gallery-2.jpg" alt="" class="gallery_img" />
+
+                    <div class="gallery_hover"></div>
+                </div>
+
+                <div class="gallery_item">
+                    <img src="Ativo/Imagens/photo-gallery-3.jpg" alt="" class="gallery_img" />
+
+                    <div class="gallery_hover"></div>
+                </div>
+
+                <div class="gallery_item">
+                    <img src="Ativo/Imagens/photo-gallery-4.jpg" alt="" class="gallery_img" />
+
+                    <div class="gallery_hover"></div>
+                </div>
+
+                <div class="gallery_item">
+                    <img src="Ativo/Imagens/photo-gallery-5.jpg" alt="" class="gallery_img" />
+
+                    <div class="gallery_hover"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer_container section container grid">
+            <div class="footer_content col-one wow fadeInLeft">
+                <a href="index.html" class="footer_logo">
+                    <img src="Ativo/Imagens/logo.png" alt="" class="footer_logo-img">
+                </a>
+
+                <p class="footer_description">Tudo produzido usando ingredientes frescos e sempre servindo comidas
+                    deliciosas. Incluindo pizzas e pratos de massa, bem como saladas frescas, hambúrgueres, bifes,
+                    risotos e sobremesas.</p>
+
+                <h3 class="footer_title">Redes Sociais</h3>
+
+                <div class="redes_sociais">
+                    <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+                    <a href="#"><i class="ri-instagram-line"></i></a>
+                    <a href="#"><i class="ri-twitter-fill"></i></a>
+                </div>
+
+                <p class="newsletter_description">Receber Novidades</p>
+
+                <div class="footer_subscribe">
+                    <input type="text" placeholder="Digite seu endereço de e-mail..." class="footer_input">
+
+                    <button class="button">Inscreva-se</button>
                 </div>
             </div>
 
-            <div class="menu_item">
-                <div class="menu_img-wrapper">
-                    <img src="Ativo/Imagens/coof-img-2.png" alt="" class="menu_img" />
-                </div>
+            <div class="footer_content col-one wow fadeInRight">
+                <h3 class="footer_title">Informações de Contato</h3>
 
-                <div class="menu_data">
-                    <span class="menu_grams">100 ml</span>
-                    <h3 class="menu_title">Café Vigoroso Espresso</h3>
-                    <span class="menu_price">R$ 11,00</span>
-                    <ul class="menu_rating">
-                        <li><i class="ri-star-fill"></i></li>
-                        <li><i class="ri-star-fill"></i></li>
-                        <li><i class="ri-star-fill"></i></li>
-                        <li><i class="ri-star-fill"></i></li>
-                        <li><i class="ri-star-fill"></i></li>
-                    </ul>
+                <dl class="footer_list">
+                    <dt>Seg - Qui:</dt>
+                    <dd>5:00 p.m - 11:00 pm</dd>
+                    <dt>Sexta-feira:</dt>
+                    <dd>4:00 p.m - 12:00 pm</dd>
+                    <dt>Feriados</dt>
+                    <dd>Aberto dia inteiro</dd>
+                </dl>
 
-                    <a href="#" class="menu_btn">
-                        <i class="ri-shopping-bag-line"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="menu_item">
-                <div class="menu_img-wrapper">
-                    <img src="Ativo/Imagens/coof-img-3.png" alt="" class="menu_img" />
-                </div>
-
-                <div class="menu_data">
-                    <span class="menu_grams">100 ml</span>
-                    <h3 class="menu_title">Coquetel Rainbow Paradise</h3>
-                    <span class="menu_price">R$ 11,00</span>
-                    <ul class="menu_rating">
-                        <li><i class="ri-star-fill"></i></li>
-                        <li><i class="ri-star-fill"></i></li>
-                        <li><i class="ri-star-fill"></i></li>
-                        <li><i class="ri-star-fill"></i></li>
-                        <li><i class="ri-star-fill"></i></li>
-                    </ul>
-
-                    <a href="#" class="menu_btn">
-                        <i class="ri-shopping-bag-line"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="menu_item">
-                <div class="menu_img-wrapper">
-                    <img src="Ativo/Imagens/coof-img-4.png" alt="" class="menu_img" />
-                </div>
-
-                <div class="menu_data">
-                    <span class="menu_grams">100 ml</span>
-                    <h3 class="menu_title">Coquetel Céu Tropical Paradise</h3>
-                    <span class="menu_price">R$ 11,00</span>
-                    <ul class="menu_rating">
-                        <li><i class="ri-star-fill"></i></li>
-                        <li><i class="ri-star-fill"></i></li>
-                        <li><i class="ri-star-fill"></i></li>
-                        <li><i class="ri-star-fill"></i></li>
-                        <li><i class="ri-star-fill"></i></li>
-                    </ul>
-
-                    <a href="#" class="menu_btn">
-                        <i class="ri-shopping-bag-line"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--==================== RESERVATION ====================-->
-    <section class="reservation section container" id="reservation">
-        <span class="section_subtitle">ENTRE EM CONTATO</span>
-        <h2 class="section_title">Reserve uma mesa, e desfrute de uma Experiência Incrível!</h2>
-
-        <div class="reservation_container grid">
-            <div class="reservation_info">
                 <div class="reservation_card">
                     <span class="reservation_icon-wrapper">
                         <img src="Ativo/Imagens/mobile.svg" alt="" class="reservation_icon">
@@ -784,7 +812,7 @@
 
                     <div>
                         <h3 class="reservation_card-title">Para Reservas</h3>
-                            <span class="reservation_card-data">65 3612-5001</span>
+                        <span class="reservation_card-data">65 3612-5001</span>
                     </div>
                 </div>
 
@@ -795,7 +823,7 @@
 
                     <div>
                         <h3 class="reservation_card-title">Para Refeições Privadas</h3>
-                            <span class="reservation_card-data">fodioo65@gmail.com.br</span>
+                        <span class="reservation_card-data">fodioo65@gmail.com.br</span>
                     </div>
                 </div>
 
@@ -806,168 +834,225 @@
 
                     <div>
                         <h3 class="reservation_card-title">Localização</h3>
-                            <span class="reservation_card-data">Av. Do CPA 878, Cuiabá - MT</span>
-                    </div>
-                </div>
-            </div>
-
-            <form action="" class="reservation_form">
-                <div class="reservation_form-div">
-                    <input type="text" placeholder="Nº de Convidados" class="reservation_form-inuput" />
-                </div>
-
-
-                <div class="reservation_form-group">
-                    <div class="reservation_form-div">
-                        <input type="text" placeholder="Nome Completo" class="reservation_form-inuput" />
-                    </div>
-
-                   <div class="reservation_form-div">
-                    <input type="text" placeholder="Telefone" class="reservation_form-inuput" />
-                   </div>
-               </div>
-
-               <div class="reservation_form-group">
-                    <div class="reservation_form-div">
-                        <input type="text" placeholder="dia/mês/ano" class="reservation_form-inuput" />
-                    </div>
-
-                   <div class="reservation_form-div">
-                    <input type="text" placeholder="00:00 AM" class="reservation_form-inuput" />
-                   </div>
-               </div>
-
-               <button class="button reservation_button">Enviar Mensagem</button>
-            </form>
-        </div>
-    </section>
-
-    <!--==================== GALLERY ====================-->
-    <section class="gallery">
-        <div class="gallery_container grid">
-            <div class="gallery_item">
-                <img src="Ativo/Imagens/photo-gallery-1.jpg" alt="" class="gallery_img" /> 
-
-                <div class="gallery_hover"></div>
-            </div>
-
-            <div class="gallery_item">
-                <img src="Ativo/Imagens/photo-gallery-2.jpg" alt="" class="gallery_img" /> 
-
-                <div class="gallery_hover"></div>
-            </div>
-
-            <div class="gallery_item">
-                <img src="Ativo/Imagens/photo-gallery-3.jpg" alt="" class="gallery_img" /> 
-
-                <div class="gallery_hover"></div>
-            </div>
-
-            <div class="gallery_item">
-                <img src="Ativo/Imagens/photo-gallery-4.jpg" alt="" class="gallery_img" /> 
-
-                <div class="gallery_hover"></div>
-            </div>
-
-            <div class="gallery_item">
-                <img src="Ativo/Imagens/photo-gallery-5.jpg" alt="" class="gallery_img" /> 
-
-                <div class="gallery_hover"></div>
-            </div>
-        </div>
-    </section>
-  </main>
-
-  <!--==================== FOOTER ====================-->
-  <footer class="footer">
-    <div class="footer_container section container grid">
-        <div class="footer_content">
-            <a href="index.html" class="footer_logo">
-                <img src="Ativo/Imagens/logo.png" alt="" class="footer_logo-img">
-            </a>
-
-            <p class="footer_description">Tudo produzido usando ingredientes frescos e sempre servindo comidas deliciosas. Incluindo pizzas e pratos de massa, bem como saladas frescas, hambúrgueres, bifes, risotos e sobremesas.</p>
-        
-           <h3 class="footer_title">Redes Sociais</h3>
-           
-           <div class="redes_sociais">
-            <a href="#"><i class="ri-facebook-circle-fill"></i></a>
-            <a href="#"><i class="ri-instagram-line"></i></a>
-            <a href="#"><i class="ri-twitter-fill"></i></a>
-           </div>
-
-           <p class="newsletter_description">Receber Novidades</p>
-           
-           <div class="footer_subscribe">
-             <input type="text" placeholder="Digite seu endereço de e-mail..." class="footer_input">
-           
-             <button class="button">Inscreva-se</button>  
-           </div>
-        </div>
-
-        <div class="footer_content">
-            <h3 class="footer_title">Informações de Contato</h3>
-
-            <dl class="footer_list">
-                <dt>Seg - Qui:</dt>
-                <dd>5:00 p.m - 11:00 pm</dd>
-                <dt>Sexta-feira:</dt>
-                <dd>4:00 p.m - 12:00 pm</dd>
-                <dt>Feriados</dt>
-                <dd>Aberto dia inteiro</dd>
-            </dl>
-
-            <div class="reservation_card">
-                <span class="reservation_icon-wrapper">
-                    <img src="Ativo/Imagens/mobile.svg" alt="" class="reservation_icon">
-                </span>
-
-                <div>
-                    <h3 class="reservation_card-title">Para Reservas</h3>
-                        <span class="reservation_card-data">65 3612-5001</span>
-                </div>
-            </div>
-
-            <div class="reservation_card">
-                <span class="reservation_icon-wrapper">
-                    <img src="Ativo/Imagens/envelope.svg" alt="" class="reservation_icon">
-                </span>
-
-                <div>
-                    <h3 class="reservation_card-title">Para Refeições Privadas</h3>
-                        <span class="reservation_card-data">fodioo65@gmail.com.br</span>
-                </div>
-            </div>
-
-            <div class="reservation_card">
-                <span class="reservation_icon-wrapper">
-                    <img src="Ativo/Imagens/location.svg" alt="" class="reservation_icon">
-                </span>
-
-                <div>
-                    <h3 class="reservation_card-title">Localização</h3>
                         <span class="reservation_card-data">Av. Do CPA 878, Cuiabá - MT</span>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="color col-one wow fadeIn delay-03s">
+            <p class="footer_copy"> <span>&copy; 2023 Foodio</span> Restaurante - Todos os direitos reservados</p>
+            <hr class="linha">
+            <p class="end">Desenvolvido por : <a href="https://codeweb-solution.netlify.app/#home" target="_blank">Code
+                    Web</a></p>
+        </div>
+    </footer>
+
+    <div class="modal-full col-one hidden" id="modalCarrinho">
+
+        <div class="m-header">
+            <div class="container">
+                <a class="btn button btn-sm float-right" onclick="cardapio.metodos.abrirCarrinho(false)">
+                    Fechar
+                </a>
+                <div class="etapas">
+                    <div class="etapa etapa1 active-link">1</div>
+                    <div class="etapa etapa2">2</div>
+                    <div class="etapa etapa3">3</div>
+                </div>
+                <p class="title-carrinho mt-4">
+                    <b id="lblTituloEtapa">Seu carrinho:</b>
+                </p>
+            </div>
+        </div>
+
+
+        <div class="m-body">
+            <div class="container">
+
+                <div id="itemCarrinho" class="row mr-0 ml-0 hidden">
+
+                </div>
+
+
+                <div id="localEntrega" class="row mr-0 ml-0 hidden">
+                    <div class="col-12 col-lg-4 col-md-4 col-sm-12">
+                        <div class="form-group container-cep">
+                            <label>CEP:</label>
+                            <input id="txtCEP" type="text" class="form-control" />
+                            <a class="btn btn-sm" onclick="cardapio.metodos.buscarCep()">
+                                <i class="fa fa-search"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-8 no-mobile"></div>
+
+                    <div class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label>Endereço:</label>
+                            <input id="txtEndereco" type="text" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-4 col-sm-12">
+                        <div class="form-group">
+                            <label>Bairro:</label>
+                            <input id="txtBairro" type="text" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-2 col-md-2 col-sm-12">
+                        <div class="form-group">
+                            <label>Número:</label>
+                            <input id="txtNumero" type="text" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6 col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label>Cidade:</label>
+                            <input id="txtCidade" type="text" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 col-md-4 col-sm-12">
+                        <div class="form-group">
+                            <label>Complemento:</label>
+                            <input id="txtComplemento" type="text" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-2 col-md-2 col-sm-12">
+                        <div class="form-group">
+                            <label>UF:</label>
+                            <select id="ddlUf" class="form-control">
+                                <option value="-1">...</option>
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AP">AP</option>
+                                <option value="AM">AM</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MT">MT</option>
+                                <option value="MS">MS</option>
+                                <option value="MG">MG</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PR">PR</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RS">RS</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="SC">SC</option>
+                                <option value="SP">SP</option>
+                                <option value="SE">SE</option>
+                                <option value="TO">TO</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="resumoCarrinho" class="row mr-0 ml-0 hidden">
+                    <div class="col-12">
+                        <p class="title-carrinho mt-4">
+                            <b>Itens do pedido:</b>
+                        </p>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="row" id="listaItensResumo">
+
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <p class="title-carrinho mt-4">
+                            <b>Local da entrega:</b>
+                        </p>
+                    </div>
+
+                    <div class="col-12 item-carrinho resumo">
+                        <div class="img-map">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="dados-produto">
+                            <p class="texto-endereco">
+                                <b id="resumoEndereco"></b>
+                            </p>
+                            <p class="cidade-endereco" id="cidadeEndereco">
+                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="m-footer">
+            <div class="container">
+                <div class="container-total text-right mb-4">
+                    <p class="mb-0 texto-subtotal">
+                        <span>Subtotal:</span>
+                        <span id="lblSubTotal">R$ 0,00</span>
+                    </p>
+                    <p class="mb-0 texto-entrega">
+                        <span><i class="fas fa-motorcycle"></i>&nbsp;Entrega</span>
+                        <span id="lblValorEntrega">+ R$ 0,00</span>
+                    </p>
+                    <p class="mb-0 texto-total">
+                        <span><b>Total:</b></span>
+                        <span class="valor-total"><b id="lblValorTotal">R$ 0,00</b></span>
+                    </p>
+                </div>
+
+                <a onclick="cardapio.metodos.carregarEndereco()" class="btn button float-right hidden" id="btnEtapaPedido">
+                    Continuar
+                </a>
+
+                <a onclick="cardapio.metodos.resumoPedido()" class="btn button float-right hidden" id="btnEtapaEndereco">
+                    Revisar Pedido
+                </a>
+
+                <a class="btn button float-right hidden" id="btnEtapaResumo" target="_blank">
+                    Enviar Pedido
+                </a>
+
+                <a onclick="cardapio.metodos.voltarEtapa()" class="btn button btn-voltar float-right mr-3 hidden" id="btnVoltar">
+                    Voltar
+                </a>
+            </div>
+        </div>
+
     </div>
 
-    <p class="footer_copy"> <span>&copy; 2023 Foodio</span> Restaurante - Todos os direitos reservados</p>
-    <hr class="linha">
-    <p class="end">Desenvolvido por : <a href="https://codeweb-solution.netlify.app/#home" target="_blank">Code Web</a></p>
-  </footer>
-
-
-
-  <!--===================SCROLL UP =================-->
-<a href="#" class="scrollup" id="scroll-up">
-    <i class="ri-arrow-up-line scrollup_icon"></i>
-</a>
+    <!--===================SCROLL UP =================-->
+    <a href="#" class="scrollup animated bounceIn" id="scroll-up">
+        <i class="ri-arrow-up-line scrollup_icon"></i>
+    </a>
 
     <!--===========SWIPER JS===========-->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <!--===========SWIPER JS===========-->
-    <script src="Ativo/JS/script.js"></script>
+    <script type="text/javascript" src="Ativo/JS/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="Ativo/JS/modernizr-3.5.0.min.js"></script>
+    <script type="text/javascript" src="Ativo/JS/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Ativo/JS/popper.min.js"></script>
+    <script type="text/javascript" src="Ativo/JS/wow.min.js"></script>
+    <script type="text/javascript" src="Ativo/JS/dados.js"></script>
+    <script type="text/javascript" src="Ativo/JS/script.js"></script>
+    <script src="https://kit.fontawesome.com/2463c70382.js" crossorigin="anonymous"></script>
+
+    <script>new WOW().init();</script>
 </body>
-</html>    
+
+</html>
